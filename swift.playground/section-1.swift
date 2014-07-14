@@ -32,13 +32,31 @@ for (let key: String, let val: String) in animalDictionary {
 
 // Function
 func sum(let x: Float, let y: Float) -> Float {
-    return x + y;
+    return x + y
 }
 
 sum(1,2);
 
 func sumln(let x: Float, let y: Float) {
-    println(x + y);
+    println(x + y)
 }
 
 sumln(2,3)
+
+
+// OOP
+class Evangelion {
+
+    let name: String;
+
+    init(let name: String) {
+        self.name = name
+    }
+
+    func sayName() -> String {
+        return self.name;
+    }
+}
+
+let evangelion: Evangelion = Evangelion(name: "初号機")
+evangelion.sayName()
