@@ -28,3 +28,17 @@ animalDictionary["type"]
 for (let key: String, let val: String) in animalDictionary {
     println("\(key) is \(val)")
 }
+
+
+// Function
+func sum(let x: Float, let y: Float) -> Float {
+    return x + y;
+}
+
+sum(1,2);
+
+func sumln(let x: Float, let y: Float) {
+    println(x + y);
+}
+
+sumln(2,3)
