@@ -9,6 +9,8 @@ let it: String = "Go"
 
 let hoge: String = "\(it) \(greeting + kirakira)"
 
+let ahya: String = "Hello \(it)"
+
 // Int, Float, Double
 let num: Int = 100
 let pie1: Float = 3.14
@@ -37,26 +39,46 @@ func sum(let x: Float, let y: Float) -> Float {
 
 sum(1,2);
 
-func sumln(let x: Float, let y: Float) {
-    println(x + y)
+// OOP
+protocol HitoProtocol {
+    var name: String {get}
 }
 
-sumln(2,3)
+class Hito: HitoProtocol {
 
-
-// OOP
-class Evangelion {
-
-    let name: String;
+    let name: String
 
     init(let name: String) {
         self.name = name
     }
-
-    func sayName() -> String {
-        return self.name;
-    }
 }
 
-let evangelion: Evangelion = Evangelion(name: "初号機")
-evangelion.sayName()
+enum HitoEnum: String {
+    case Lilis = "リリス"
+    case Adam = "アダム"
+}
+
+class Lilis: Hito {
+    let type = HitoEnum.Lilis
+}
+
+class Adam: Hito {
+    let type = HitoEnum.Adam
+}
+
+class Pilot: Hito {
+}
+
+class Evangelion: Lilis {
+}
+
+class Shito: Adam {
+}
+
+let eva01: Evangelion = Evangelion(name: "初号機");
+eva01.name
+eva01.type.toRaw()
+
+let sakiel: Shito = Shito(name: "サキエル")
+sakiel.name
+sakiel.type.toRaw()
